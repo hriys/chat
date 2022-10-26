@@ -5,8 +5,10 @@ const chat = [
     '良い名前ですね。',
     '趣味はなんですか？',
     'いい趣味ですね！',
+    '休みの日は何しているんですか？',
+    'そうなんですね。',
      //ランダム返答
-    ['bye!', 'どうしたの？', 'ok!', 'Alright!', 'Oh...']
+    ['それじゃあね。', 'おっと。もうこんな時間。さようなら。', 'またね。']
 ];
 
 //ロボットの返信の回数(最初は０回)
@@ -82,15 +84,22 @@ function btnFunc() {
             break;
 
         case 5:
-                output(chat[4], 'robot');
+            output(chat[4], 'robot');
+            setTimeout(() => {
+                output(chat[5], 'robot');
+            }, 2000);
+            break;
+
+        case 7:
+            output(chat[6], 'robot');
             break;
 
 
             // もしロボットのトーク数が4個の時に送信ボタンが押されたら、
-            // chat配列の3（4個目）のランダム番目が返信
-        //case 4:
-        //    output(chat[4][Math.floor(Math.random() * chat[4].length)], 'robot');
-        //    break;
+            // chat配列の7（8個目）のランダム番目が返信
+        case 8:
+            output(chat[7][Math.floor(Math.random() * chat[7].length)], 'robot');
+            break;
 
             //それ以降はやまびこ
         default:
